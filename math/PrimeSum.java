@@ -10,14 +10,17 @@ public class PrimeSum
   {
      boolean []visited = new boolean[N + 1];
      Arrays.fill(visited, true);
-  
+     
+     visited[0] = false;
+     visited[1] = false; 
+   
      if( N > 2) 
      {
         for(int i = 2; i < N; i++)
         {
            if(visited[i])
            {
-             for(int j = i + i ; j <= N; j += i)
+             for(int j = i + i ; j < N; j += i)
              {
                visited[j] = false;
              }
